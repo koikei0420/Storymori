@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  name: MyString
+  text: MyString
+  story_id: 
+  parent_id: 
+  create_at: 2019-05-22
+  update_at: 2019-05-22
+  create_by: 
+  update_by: 
+
+two:
+  id: 
+  name: MyString
+  text: MyString
+  story_id: 
+  parent_id: 
+  create_at: 2019-05-22
+  update_at: 2019-05-22
+  create_by: 
+  update_by: 
