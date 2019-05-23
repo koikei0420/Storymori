@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 2019_05_22_063816) do
   end
 
   create_table "stories", force: :cascade do |t|
-    t.string "title"
-    t.string "summary"
+    t.string "title", null: false
+    t.string "summary", null: false
     t.integer "create_by"
     t.integer "update_by"
     t.datetime "created_at", null: false
