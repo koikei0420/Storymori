@@ -13,6 +13,11 @@ class Api::StoriesController < ApplicationController
     render json: { error: "ページが表示できません"}, status: 422 #validation error
   end
 
+  #getStories End-point
+  def index
+    render json: Story.joins(:pages).select("stories.id, stories.title, pages.id AS parentId").where("pages.parent_id IS NULL")
+  end
+
   private
   def story_params
     params.permit(:title, :text)
