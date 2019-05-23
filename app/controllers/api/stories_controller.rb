@@ -10,7 +10,7 @@ class Api::StoriesController < ApplicationController
     # return story id / story object
     render json: { storyId: story.id, pageId: page.id }, status: 200
   rescue ActiveRecord::RecordInvalid
-    render status: 422 #validation error
+    render json: { error: "ページが表示できません"}, status: 422 #validation error
   end
 
   private
