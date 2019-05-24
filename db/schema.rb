@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2019_05_22_063816) do
 
   create_table "pages", force: :cascade do |t|
-    t.string "name"
-    t.string "text"
+    t.string "name", null: false
+    t.string "text", null: false
     t.integer "story_id", null: false
     t.integer "parent_id"
     t.integer "create_by"
