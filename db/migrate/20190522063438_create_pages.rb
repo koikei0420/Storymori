@@ -1,8 +1,8 @@
 class CreatePages < ActiveRecord::Migration[5.2]
   def change
     create_table :pages do |t|
-      t.string :name
-      t.string :text
+      t.string :name, null: false
+      t.string :text, null: false
       t.integer :story_id, null: false
       t.integer :parent_id
       t.integer :create_by
