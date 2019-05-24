@@ -1,15 +1,15 @@
 class Api::PagesController < ApplicationController
   # savePage end-point
   def create
-    if Page.where(story_id: page_params[:story_id], page_id: page_params[:page_id]).exists?
+    if Page.where(story_id: page_params[:story_id], id: page_params[:page_id]).exists?
       page = Page.new(
         name: page_params[:name],
         text: page_params[:text],
         story_id: page_params[:story_id],
-        page_id: page_params[:page_id]
+        parent_id: page_params[:page_id]
       )
       if page.save
-        render json: { pageId: page.page_id }, status: 201
+        render json: { pageId: page.id }, status: 201
       else
         render json: { error: 'Validation error' }, status: 422
       end
