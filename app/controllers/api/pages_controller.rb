@@ -20,7 +20,12 @@ class Api::PagesController < ApplicationController
 
   # getPage end-point
   def show
-    render plain: 'not yet'
+    results = Page.select('id, name, text').where(id: page_params[:page_id], story_id: page_params[:story_id])
+    if results.exists?
+      render json: { error: 'Given story_id or page_id is not found '}, status: 404
+    end
+    children = Page.select('id, name').where(parent_id: page_params[:page_id])
+    render json: results.to_json(children: children), status: 200
   end
 
   private
